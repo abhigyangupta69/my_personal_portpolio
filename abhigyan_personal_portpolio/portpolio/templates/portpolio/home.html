@@ -1,19 +1,35 @@
 {% extends 'portpolio/base_template.html' %}
 {% block content %}
 
-<title>Portpolio Project</title>
-  <h1>Portpolio Project</h1>
-  <p>Have Your Day</p>
-  {% load static%}
-  <img src="{% static 'portpolio/abhi.jpeg' %}"/>
-  <a href="{% url 'blog:home_blog' %}">Blog</a>
-  <a href="{% static 'portpolio/resume.pdf' %}">Download Resume</a>
-  {% for proj in project %}
-  <h1>{{proj.title}}</h1>
-  <p>{{proj.description}}</p>
 
-  <img src="{{proj.image.url}}" height="512" width="812"/>
-  <a href="{{ proj.url }}">Link</a>
-  {% endfor %}
+    {% load static %}
 
+    <div class="row justify-content-center my-3">
+        <div class="col-5">
+            <img src="{% static 'portpolio/abhi.jpeg' %}" class="img-fluid">
+        </div>
+        <div class="row justify-content-center mb-3">
+        <div class="col-md-9 text-center">
+          <h1 id="hometext" class="font-weight-bold">Abhigyan is Commander-in-Chief and lives in U.P 😊</h1>
+          <b><h1>Portfolio</h1></b>
+<!--          <p>Have Your Day</p>-->
+        </div>
+      <div>
+
+<!--          <h3><a href="{% url 'blog:home_blog' %}">Blogs</a>-->
+<!--          <br/>-->
+<!--          <a href="{% static 'portpolio/resume.pdf' %}">Go To Resume</a>-->
+<!--            </h3>-->
+        <br/>
+          {% for proj in project %}
+          <h1>{{proj.title}}</h1>
+          <p>{{proj.description}}</p>
+
+          <img src="{{proj.image.url}}" height="512" width="812"/>
+          <a href="{{ proj.url }}">Link</a>
+          {% endfor %}
+    </div>
+        </div>
+
+    </div>
 {% endblock %}
