@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'bdx+^(o804@)5+3b3f#r=1t)b-fc+v#5!j33)^-66n%d5=&m$+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','portpolioabhigyang.herokuapp.com']
+# DEBUG = False
+
+# ALLOWED_HOSTS = ['127.0.0.1','portpolioabhigyang.herokuapp.com']
 
 
 # Application definition
@@ -33,7 +35,7 @@ ALLOWED_HOSTS = ['127.0.0.1','portpolioabhigyang.herokuapp.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'whitenoise.runserver_nostatic',
+    # 'whitenoise.runserver_nostatic',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -45,7 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
      #########Newly Added######################
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     #################################
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
