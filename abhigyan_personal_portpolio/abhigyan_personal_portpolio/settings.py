@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'bdx+^(o804@)5+3b3f#r=1t)b-fc+v#5!j33)^-66n%d5=&m$+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     #########Newly Added######################
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #################################
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -121,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-##Access image From admin pannel
+##Access image From admin pannel(create media folder automatic)
 MEDIA_URL='/media/'
 ###########ADD Below file To Save Photos And Videos#######
 MEDIA_ROOT = BASE_DIR/'media'
