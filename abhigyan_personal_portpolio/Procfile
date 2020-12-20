@@ -1,0 +1,1 @@
+web : gunicorn abhigyan_personal_portpolio.wsgi  --log-file -
